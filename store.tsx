@@ -1,8 +1,7 @@
 // FIX: Implement the AppProvider and useAppContext to provide global state management.
-import React, { createContext, useState, useContext, ReactNode, useMemo, useCallback } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useMemo, useCallback, useEffect } from 'react';
 import i18n from 'i18next';
 import { User, Tour, Attraction, RoomType, Room, TourBooking, HotelBooking, Role, LocalizedString } from './types';
-import { MOCK_USERS, MOCK_TOURS, MOCK_ATTRACTIONS, MOCK_ROOM_TYPES, MOCK_ROOMS, MOCK_TOUR_BOOKINGS, MOCK_HOTEL_BOOKINGS } from './mockData';
 
 // Define the shape of the context state
 interface AppContextType {
@@ -39,13 +38,13 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 // Create the provider component
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [users, setUsers] = useState<User[]>(MOCK_USERS);
-    const [tours, setTours] = useState<Tour[]>(MOCK_TOURS);
-    const [attractions, setAttractions] = useState<Attraction[]>(MOCK_ATTRACTIONS);
-    const [roomTypes, setRoomTypes] = useState<RoomType[]>(MOCK_ROOM_TYPES);
-    const [rooms, setRooms] = useState<Room[]>(MOCK_ROOMS);
-    const [tourBookings, setTourBookings] = useState<TourBooking[]>(MOCK_TOUR_BOOKINGS);
-    const [hotelBookings, setHotelBookings] = useState<HotelBooking[]>(MOCK_HOTEL_BOOKINGS);
+    const [users, setUsers] = useState<User[]>([]);
+    const [tours, setTours] = useState<Tour[]>([]);
+    const [attractions, setAttractions] = useState<Attraction[]>([]);
+    const [roomTypes, setRoomTypes] = useState<RoomType[]>([]);
+    const [rooms, setRooms] = useState<Room[]>([]);
+    const [tourBookings, setTourBookings] = useState<TourBooking[]>([]);
+    const [hotelBookings, setHotelBookings] = useState<HotelBooking[]>([]);
     
     const [user, setUser] = useState<User | null>(null);
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -55,7 +54,32 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     const [language, setLanguage] = useState<'en' | 'ru'>(i18n.language as 'en' | 'ru' || 'ru');
     const [tourFilter, setTourFilter] = useState<Tour | null>(null);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/api/data.php');
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                }
+                const data = await response.json();
+                setUsers(data.users);
+                setTours(data.tours);
+                setAttractions(data.attractions);
+                setRoomTypes(data.roomTypes);
+                setRooms(data.rooms);
+                setTourBookings(data.tourBookings);
+                setHotelBookings(data.hotelBookings);
+            } catch (error) {
+                console.error("Failed to fetch data:", error);
+                // Here you could set an error state to show a message to the user
+            }
+        };
+
+        fetchData();
+    }, []);
+
     const login = useCallback((email: string, password_hash: string): boolean => {
+        // In a real app, this would be a POST request to a login API endpoint.
         const foundUser = users.find(u => u.email === email && u.password_hash === password_hash);
         if (foundUser) {
             setUser(foundUser);
@@ -82,6 +106,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
             role: Role.USER,
         };
         delete (newUser as any).password;
+        // In a real app, you would also send this newUser to a PHP script
+        // using fetch() with a POST method to save it.
+        // For now, we are only updating the client-side state.
         setUsers(prev => [...prev, newUser]);
         return true;
     }, [users]);
@@ -117,6 +144,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
                 ru: attraction.description
             }
         };
+        // In a real app, this would be a POST request to save the new attraction.
         setAttractions(prev => [newAttraction, ...prev]);
     }, [user, attractions]);
     
@@ -128,6 +156,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
             status: 'pending',
             ...booking
         };
+        // In a real app, this would be a POST request to save the new booking.
         setHotelBookings(prev => [...prev, newBooking]);
     }, [user, hotelBookings]);
 
@@ -146,6 +175,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
             finalPrice: tour.basePrice,
             status: 'confirmed'
         };
+        // In a real app, this would be a POST request to save the new booking.
         setTourBookings(prev => [...prev, newBooking]);
         return true;
     }, [user, tours, tourBookings]);
@@ -156,16 +186,19 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         const updatedUser = { ...user, ...data };
         setUser(updatedUser);
         
+        // In a real app, this would be a POST request to update user data.
         setUsers(prevUsers => prevUsers.map(u => u.id === user.id ? updatedUser : u));
     }, [user]);
 
     const cancelTourBooking = useCallback((bookingId: number) => {
+        // In a real app, this would be a POST request to update the booking status.
         setTourBookings(prev => prev.map(b => 
             b.id === bookingId ? { ...b, status: 'cancelled' } : b
         ));
     }, []);
 
     const cancelHotelBooking = useCallback((bookingId: number) => {
+        // In a real app, this would be a POST request to update the booking status.
         setHotelBookings(prev => prev.map(b => 
             b.id === bookingId ? { ...b, status: 'cancelled' } : b
         ));
