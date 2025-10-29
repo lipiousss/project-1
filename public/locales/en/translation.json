@@ -1,0 +1,129 @@
+{
+  "app": {
+    "title": "Udmurtia Travel"
+  },
+  "nav": {
+    "udmurtia": "About Udmurtia",
+    "tours": "Tours",
+    "hotel": "Hotel",
+    "attractions": "Places",
+    "search": "Search",
+    "profile": "My Profile"
+  },
+  "auth": {
+    "signInTitle": "Sign in to your account",
+    "emailPlaceholder": "Email address",
+    "passwordPlaceholder": "Password",
+    "signInButton": "Sign in",
+    "signOutButton": "Sign Out",
+    "or": "or",
+    "createAccountLink": "create a new account",
+    "createAccountTitle": "Create a new account",
+    "firstNamePlaceholder": "First Name",
+    "lastNamePlaceholder": "Last Name",
+    "patronymicPlaceholder": "Patronymic (optional)",
+    "birthDatePlaceholder": "Date of Birth",
+    "registerButton": "Register",
+    "alreadyHaveAccount": "Already have an account?",
+    "signInLink": "Sign in"
+  },
+  "error": {
+    "allFieldsRequired": "All fields are required.",
+    "invalidCredentials": "Invalid email or password.",
+    "fillRequiredFields": "Please fill in all required fields.",
+    "passwordLength": "Password must be at least 3 characters long.",
+    "emailExists": "A user with this email already exists."
+  },
+  "alert": {
+    "registrationSuccess": "Registration successful! You can now log in.",
+    "provideImageAndDescription": "Please provide both an image and a description.",
+    "hotelRequestSent": "Your booking request has been sent to the administrator.",
+    "loginToBook": "You must be logged in to book a room.",
+    "tourBookedSuccess": "Tour booked successfully!",
+    "bookingFailed": "Booking failed. You may have already booked this tour."
+  },
+  "udmurtia": {
+    "title": "Welcome to Udmurtia!",
+    "description": "Udmurtia is a republic in Russia located in Eastern Europe. It is known for its rich cultural heritage, beautiful nature, and the legendary Kalashnikov rifle. Explore the unique traditions of the Udmurt people, visit historical sites, and enjoy the pristine landscapes of this amazing region."
+  },
+  "attractions": {
+    "title": "Share Your Experience",
+    "descriptionLabel": "Description",
+    "imageLabel": "Photo",
+    "linkToTourLabel": "Link to a Tour (optional)",
+    "selectTourOptional": "Select a tour...",
+    "uploadButton": "Upload Photo",
+    "uploadedBy": "Uploaded by {{email}} on {{date}}"
+  },
+  "search": {
+    "title": "Search for a Tour",
+    "placeholder": "Enter tour name, description, or location...",
+    "findButton": "Find",
+    "resultsTitle": "Search Results",
+    "noResults": "No tours found for your query."
+  },
+  "tours": {
+    "startsAt": "Starts at: {{location}}",
+    "date": "Date",
+    "duration": "Duration",
+    "days": "{{count}} days",
+    "price": "{{price}} ₽",
+    "details": "Details",
+    "showingFiltered": "Showing filtered results.",
+    "showingFilteredDesc": "Displaying the tour '{{name}}'.",
+    "showAllButton": "Show All Tours",
+    "title": "Available Tours",
+    "booked": "Booked",
+    "bookNow": "Book Now",
+    "seats": "Seats",
+    "age": "Age"
+  },
+  "hotel": {
+    "bookRoomTitle": "Book Room #{{id}}",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "submitBooking": "Submit Request",
+    "room": "Room",
+    "pricePerNight": "{{price}} ₽ / night",
+    "book": "Book",
+    "viewDetails": "View Details",
+    "title": "Our Hotel Rooms"
+  },
+  "common": {
+    "cancel": "Cancel"
+  },
+  "profile": {
+    "loading": "Loading profile...",
+    "title": "My Profile",
+    "saveButton": "Save",
+    "editButton": "Edit Profile",
+    "myTours": "My Tour Bookings",
+    "noTourBookings": "You have no tour bookings.",
+    "myHotelBookings": "My Hotel Bookings",
+    "noHotelBookings": "You have no hotel bookings.",
+    "cancelButton": "Cancel",
+    "confirmCancelTour": "Are you sure you want to cancel this tour booking?",
+    "confirmCancelHotel": "Are you sure you want to cancel this hotel booking?"
+  },
+  "bookingStatus": {
+    "confirmed": "Confirmed",
+    "cancelled": "Cancelled",
+    "approved": "Approved",
+    "pending": "Pending",
+    "rejected": "Rejected"
+  },
+  "tours.status.archived": "Archived",
+  "tourDetails": {
+    "backButton": "Back to all tours",
+    "tourPoints": "Tour Itinerary",
+    "userPhotos": "User Photos",
+    "noPhotos": "No user photos for this tour yet. Be the first to add one!"
+  },
+  "roomDetails": {
+    "backButton": "Back to all rooms",
+    "galleryTitle": "Photo Gallery",
+    "aboutTitle": "About the room",
+    "bookNow": "Book Now",
+    "characteristicsTitle": "Features"
+  }
+}

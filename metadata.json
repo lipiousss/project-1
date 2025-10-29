@@ -1,0 +1,5 @@
+{
+  "name": "Udmurtia Tours & Hotel Booking",
+  "description": "A web service for registering for excursions and tours in Udmurtia, and booking hotel rooms. Includes separate functionalities for users and administrators for managing tours and hotel reservations.",
+  "requestFramePermissions": []
+}

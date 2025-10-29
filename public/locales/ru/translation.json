@@ -1,0 +1,129 @@
+{
+  "app": {
+    "title": "Удмуртия Трэвел"
+  },
+  "nav": {
+    "udmurtia": "Об Удмуртии",
+    "tours": "Туры",
+    "hotel": "Отель",
+    "attractions": "Места",
+    "search": "Поиск",
+    "profile": "Мой профиль"
+  },
+  "auth": {
+    "signInTitle": "Войдите в свой аккаунт",
+    "emailPlaceholder": "Адрес электронной почты",
+    "passwordPlaceholder": "Пароль",
+    "signInButton": "Войти",
+    "signOutButton": "Выйти",
+    "or": "или",
+    "createAccountLink": "создайте новый аккаунт",
+    "createAccountTitle": "Создание нового аккаунта",
+    "firstNamePlaceholder": "Имя",
+    "lastNamePlaceholder": "Фамилия",
+    "patronymicPlaceholder": "Отчество (необязательно)",
+    "birthDatePlaceholder": "Дата рождения",
+    "registerButton": "Зарегистрироваться",
+    "alreadyHaveAccount": "Уже есть аккаунт?",
+    "signInLink": "Войти"
+  },
+  "error": {
+    "allFieldsRequired": "Все поля обязательны для заполнения.",
+    "invalidCredentials": "Неверный email или пароль.",
+    "fillRequiredFields": "Пожалуйста, заполните все обязательные поля.",
+    "passwordLength": "Пароль должен быть не менее 3 символов.",
+    "emailExists": "Пользователь с таким email уже существует."
+  },
+  "alert": {
+    "registrationSuccess": "Регистрация прошла успешно! Теперь вы можете войти.",
+    "provideImageAndDescription": "Пожалуйста, предоставьте и изображение, и описание.",
+    "hotelRequestSent": "Ваш запрос на бронирование отправлен администратору.",
+    "loginToBook": "Вы должны войти в систему, чтобы забронировать номер.",
+    "tourBookedSuccess": "Тур успешно забронирован!",
+    "bookingFailed": "Не удалось забронировать. Возможно, вы уже записаны на этот тур."
+  },
+  "udmurtia": {
+    "title": "Добро пожаловать в Удмуртию!",
+    "description": "Удмуртия — республика в России, расположенная в Восточной Европе. Она известна своим богатым культурным наследием, красивой природой и легендарным автоматом Калашникова. Исследуйте уникальные традиции удмуртского народа, посетите исторические места и насладитесь нетронутыми пейзажами этого удивительного края."
+  },
+  "attractions": {
+    "title": "Поделитесь своими впечатлениями",
+    "descriptionLabel": "Описание",
+    "imageLabel": "Фотография",
+    "linkToTourLabel": "Привязать к туру (необязательно)",
+    "selectTourOptional": "Выберите тур...",
+    "uploadButton": "Загрузить фото",
+    "uploadedBy": "Загружено {{email}} {{date}}"
+  },
+  "search": {
+    "title": "Поиск тура",
+    "placeholder": "Введите название, описание или место начала тура...",
+    "findButton": "Найти",
+    "resultsTitle": "Результаты поиска",
+    "noResults": "По вашему запросу туров не найдено."
+  },
+  "tours": {
+    "startsAt": "Начало: {{location}}",
+    "date": "Дата",
+    "duration": "Длительность",
+    "days": "{{count}} дн.",
+    "price": "{{price}} ₽",
+    "details": "Подробнее",
+    "showingFiltered": "Показаны отфильтрованные результаты.",
+    "showingFilteredDesc": "Отображается тур '{{name}}'.",
+    "showAllButton": "Показать все туры",
+    "title": "Доступные туры",
+    "booked": "Забронировано",
+    "bookNow": "Забронировать",
+    "seats": "Места",
+    "age": "Возраст"
+  },
+  "hotel": {
+    "bookRoomTitle": "Бронь номера №{{id}}",
+    "checkIn": "Заезд",
+    "checkOut": "Выезд",
+    "submitBooking": "Отправить запрос",
+    "room": "Номер",
+    "pricePerNight": "{{price}} ₽ / ночь",
+    "book": "Бронь",
+    "viewDetails": "Подробнее",
+    "title": "Номера в нашем отеле"
+  },
+  "common": {
+    "cancel": "Отмена"
+  },
+  "profile": {
+    "loading": "Загрузка профиля...",
+    "title": "Мой Профиль",
+    "saveButton": "Сохранить",
+    "editButton": "Редактировать",
+    "myTours": "Мои бронирования туров",
+    "noTourBookings": "У вас нет забронированных туров.",
+    "myHotelBookings": "Мои бронирования отеля",
+    "noHotelBookings": "У вас нет бронирований в отеле.",
+    "cancelButton": "Отменить",
+    "confirmCancelTour": "Вы уверены, что хотите отменить бронирование этого тура?",
+    "confirmCancelHotel": "Вы уверены, что хотите отменить бронирование этого номера?"
+  },
+  "bookingStatus": {
+    "confirmed": "Подтверждено",
+    "cancelled": "Отменено",
+    "approved": "Одобрено",
+    "pending": "В ожидании",
+    "rejected": "Отклонено"
+  },
+  "tours.status.archived": "В архиве",
+  "tourDetails": {
+    "backButton": "Назад ко всем турам",
+    "tourPoints": "Маршрут тура",
+    "userPhotos": "Фотографии пользователей",
+    "noPhotos": "Для этого тура еще нет фотографий от пользователей. Будьте первым!"
+  },
+  "roomDetails": {
+    "backButton": "Назад ко всем номерам",
+    "galleryTitle": "Фотогалерея",
+    "aboutTitle": "О номере",
+    "bookNow": "Забронировать",
+    "characteristicsTitle": "Особенности"
+  }
+}
